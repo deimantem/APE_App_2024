@@ -6,5 +6,9 @@ public interface ICounterService
 
     void Increment();
 
+    void Decrement();
+
     Task<bool> TryIncrement();
+
+    Task<bool> TryDecrement();
 }

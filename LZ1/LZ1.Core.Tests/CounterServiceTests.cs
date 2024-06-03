@@ -59,7 +59,14 @@ public class CounterServiceTests : TestsBase
     [Test]
     public void TestGetLabelOnDecrement()
     {
-        Assert.Inconclusive("This test is not implemented.");
+        var provider = CreateProvider();
+        var counterService = provider.GetRequiredService<ICounterService>();
+
+        Assert.That(counterService.GetLabel(), Is.EqualTo("Clicked 0 times"));
+
+        counterService.Decrement();
+
+        Assert.That(counterService.GetLabel(), Is.EqualTo("Clicked 0 times"));
     }
 
     [TestCase(true)]
@@ -82,7 +89,7 @@ public class CounterServiceTests : TestsBase
 
     private class TestDialogService : IDialogService
     {
-        public bool AskResult { get; set; } = true;
+        public bool AskResult { get; set; } = false;
 
         public string LastMessage { get; private set; } = string.Empty;
 

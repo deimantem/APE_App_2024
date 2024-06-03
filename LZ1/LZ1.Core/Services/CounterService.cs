@@ -2,10 +2,11 @@ namespace LZ1.Core.Services;
 
 internal class CounterService : ICounterService
 {
-    private const string ConfirmationMessage = "Are you sure you want to increment?";
+    private const string IncrementConfirmationMessage = "Are you sure you want to increment?";
+    private const string DecrementConfirmationMessage = "Are you sure you want to decrement?";
+    private readonly IDialogService _dialogService;
 
     private readonly ICounterState _state;
-    private readonly IDialogService _dialogService;
 
     public CounterService(ICounterState state, IDialogService dialogService)
     {
@@ -13,16 +14,16 @@ internal class CounterService : ICounterService
         _dialogService = dialogService ?? throw new ArgumentNullException(nameof(dialogService));
     }
 
-    /// <inheritdoc/>
+    /// <inheritdoc />
     public void Increment()
     {
         _state.Increment();
     }
 
-    /// <inheritdoc/>
+    /// <inheritdoc />
     public async Task<bool> TryIncrement()
     {
-        var result = await _dialogService.AskAsync(ConfirmationMessage);
+        var result = await _dialogService.AskAsync(IncrementConfirmationMessage);
 
         if (result)
         {
@@ -32,11 +33,30 @@ internal class CounterService : ICounterService
         return result;
     }
 
-    /// <inheritdoc/>
+    /// <inheritdoc />
     public string GetLabel()
     {
         var suffix = _state.Count == 1 ? string.Empty : "s";
 
         return $"Clicked {_state.Count} time{suffix}";
+    }
+
+    /// <inheritdoc />
+    public void Decrement()
+    {
+        _state.Decrement();
+    }
+
+    /// <inheritdoc />
+    public async Task<bool> TryDecrement()
+    {
+        var result = await _dialogService.AskAsync(DecrementConfirmationMessage);
+
+        if (result)
+        {
+            Decrement();
+        }
+
+        return result;
     }
 }

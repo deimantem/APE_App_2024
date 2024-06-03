@@ -24,11 +24,22 @@
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App UI" />
 
+            <Label
+                x:Name="CounterLabel"
+                Text="0"
+                HorizontalOptions="CenterAndExpand"
+                FontSize="Large"
+                FontAttributes="Bold" />
+
             <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
+                x:Name="IncrementBtn"
+                Text="Increment"
+                Clicked="OnIncrementClicked"
+                HorizontalOptions="Fill" />
+            <Button
+                x:Name="DecrementBtn"
+                Text="Decrement"
+                Clicked="OnDecrementClicked"
                 HorizontalOptions="Fill" />
         </VerticalStackLayout>
     </ScrollView>

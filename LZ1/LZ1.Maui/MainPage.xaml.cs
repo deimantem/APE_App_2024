@@ -1,26 +1,39 @@
-﻿using LZ1.Core;
-using LZ1.Core.Services;
+﻿using LZ1.Core.Services;
 
-namespace LZ1.App;
-
-public partial class MainPage : ContentPage
+namespace LZ1.App
 {
-    private readonly ICounterService _counterService;
-
-    public MainPage(ICounterService counterService)
+    public partial class MainPage : ContentPage
     {
-        _counterService = counterService ?? throw new ArgumentNullException(nameof(counterService));
+        private readonly ICounterService _counterService;
 
-        InitializeComponent();
-    }
-
-    private async void OnCounterClicked(object? sender, EventArgs e)
-    {
-        if (await _counterService.TryIncrement())
+        public MainPage(ICounterService counterService)
         {
-            CounterBtn.Text = _counterService.GetLabel();
+            InitializeComponent();
+            _counterService = counterService ?? throw new ArgumentNullException(nameof(counterService));
+            UpdateCounterLabel();
+        }
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
+        private void UpdateCounterLabel()
+        {
+            CounterLabel.Text = _counterService.GetLabel();
+        }
+
+        private async void OnIncrementClicked(object sender, EventArgs e)
+        {
+            var result = await _counterService.TryIncrement();
+            if (result)
+            {
+                UpdateCounterLabel();
+            }
+        }
+
+        private async void OnDecrementClicked(object sender, EventArgs e)
+        {
+            var result = await _counterService.TryDecrement();
+            if (result)
+            {
+                UpdateCounterLabel();
+            }
         }
     }
 }

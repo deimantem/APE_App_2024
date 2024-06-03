@@ -8,4 +8,12 @@ internal class CounterState : ICounterState
     {
         Count += 1;
     }
+
+    public void Decrement()
+    {
+        if (Count > 0)
+        {
+            Count -= 1;
+        }
+    }
 }

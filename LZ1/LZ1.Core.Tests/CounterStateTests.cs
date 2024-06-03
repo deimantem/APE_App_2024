@@ -6,11 +6,16 @@ namespace LZ1.Core.Tests;
 [TestFixture]
 public class CounterStateTests : TestsBase
 {
+    private ICounterState GetCounterState()
+    {
+        var provider = CreateProvider();
+        return provider.GetRequiredService<ICounterState>();
+    }
+
     [Test]
     public void TestIncrement()
     {
-        var provider = CreateProvider();
-        var counterState = provider.GetRequiredService<ICounterState>();
+        var counterState = GetCounterState();
 
         Assert.That(counterState.Count, Is.EqualTo(0));
 
@@ -22,8 +27,14 @@ public class CounterStateTests : TestsBase
     [Test]
     public void TestDecrement()
     {
-        // TODO Write a test for counterState.Decrement()
+        var counterState = GetCounterState();
 
-        Assert.Inconclusive("This test is not implemented.");
+        counterState.Increment();
+
+        var initialCount = counterState.Count;
+
+        counterState.Decrement();
+
+        Assert.That(counterState.Count, Is.EqualTo(initialCount - 1), "Counter should be decremented by 1");
     }
 }
