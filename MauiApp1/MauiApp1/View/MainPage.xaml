@@ -4,16 +4,47 @@
              x:Class="MauiApp1.View.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Fill" />
-        </VerticalStackLayout>
+        <StackLayout Padding="20">
+            <!-- Input fields for Sailplane data -->
+            <Label Text="Name" FontSize="Medium" />
+            <Entry x:Name="NameEntry" Placeholder="Enter name..." />
+
+            <Label Text="Matriculation" FontSize="Medium" />
+            <Entry x:Name="MatriculationEntry" Placeholder="Enter matriculation..." />
+
+            <Label Text="Price" FontSize="Medium" />
+            <Entry x:Name="PriceEntry" Placeholder="Enter price..." Keyboard="Numeric" />
+
+            <Label Text="Description" FontSize="Medium" />
+            <Editor x:Name="DescriptionEditor" Placeholder="Enter description..." HeightRequest="100" />
+
+            <!-- Save Button -->
+            <Button Text="Save" Clicked="SaveButton_Clicked" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Margin="0,20,0,0" />
+
+            <!-- ListView to display Sailplanes -->
+            <ListView x:Name="SailplanesListView"
+                      ItemsSource="{Binding Sailplanes}"
+                      SelectionMode="Single">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" BackgroundColor="#f0f0f0" Margin="0,5,0,5">
+                                <Label Text="{Binding Name}" FontSize="Medium" />
+                                <Label Text="{Binding Matriculation}" FontSize="Medium" />
+                                <Label Text="{Binding Price, StringFormat='Price: {0:C}'}" FontSize="Medium" />
+                                <Label Text="{Binding Description}" FontSize="Medium" />
+
+                                <!-- Edit and Delete Buttons -->
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" Margin="0,10,0,0">
+                                    <Button Text="Edit" Clicked="EditButton_Clicked" CommandParameter="{Binding .}" />
+                                    <Button Text="Delete" Clicked="DeleteButton_Clicked" CommandParameter="{Binding .}" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
     </ScrollView>
 
 </ContentPage>

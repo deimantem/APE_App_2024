@@ -9,15 +9,18 @@ public partial class MainPage : ContentPage
         InitializeComponent();
     }
 
-    private void OnCounterClicked(object sender, EventArgs e)
+    private void SaveButton_Clicked(object? sender, EventArgs e)
     {
-        _count++;
+        throw new NotImplementedException();
+    }
 
-        if (_count == 1)
-            CounterBtn.Text = $"Clicked {_count} time";
-        else
-            CounterBtn.Text = $"Clicked {_count} times";
+    private void EditButton_Clicked(object? sender, EventArgs e)
+    {
+        throw new NotImplementedException();
+    }
 
-        SemanticScreenReader.Announce(CounterBtn.Text);
+    private void DeleteButton_Clicked(object? sender, EventArgs e)
+    {
+        throw new NotImplementedException();
     }
 }
