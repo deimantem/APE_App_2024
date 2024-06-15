@@ -64,7 +64,6 @@
 
     <ItemGroup>
       <Folder Include="DB\" />
-      <Folder Include="ViewModel\" />
     </ItemGroup>
 
     <ItemGroup>
