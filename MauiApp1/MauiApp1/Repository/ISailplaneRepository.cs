@@ -4,7 +4,7 @@ namespace MauiApp1.Repository;
 
 public interface ISailplaneRepository
 {
-        Task<List<Sailplane>> GetAllSailplanesAsync();
+        List<Sailplane> GetAllSailplanesAsync();
         Task AddSailplaneAsync(Sailplane sailplane);
         Task UpdateSailplaneAsync(Sailplane sailplane);
         Task DeleteSailplaneAsync(int sailplaneId);

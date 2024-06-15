@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using MauiApp1.Model;
 using MauiApp1.Repository;
 
@@ -9,12 +10,20 @@ namespace MauiApp1.ViewModel
     public class MainViewModel : INotifyPropertyChanged
     {
         private readonly ISailplaneRepository _sailplaneRepository;
-        private bool _isEditPopupOpen;
+        private ObservableCollection<Sailplane> _sailplanes;
         private Sailplane _selectedSailplane;
 
-        public ObservableCollection<Sailplane> Sailplanes { get; private set; }
+        public ObservableCollection<Sailplane> Sailplanes
+        {
+            get => _sailplanes;
+            private set
+            {
+                _sailplanes = value;
+                OnPropertyChanged();
+            }
+        }
 
-        public MainViewModel(Sailplane selectedSailplane, ISailplaneRepository sailplaneRepository)
+        public MainViewModel(ISailplaneRepository sailplaneRepository)
         {
             _sailplaneRepository = sailplaneRepository;
             Sailplanes = new ObservableCollection<Sailplane>();
@@ -29,7 +38,7 @@ namespace MauiApp1.ViewModel
 
         private async Task LoadSailplanesAsync()
         {
-            var sailplanes = await _sailplaneRepository.GetAllSailplanesAsync();
+            var sailplanes = _sailplaneRepository.GetAllSailplanesAsync();
 
             Sailplanes.Clear();
 
@@ -42,7 +51,7 @@ namespace MauiApp1.ViewModel
         public async Task AddSailplaneAsync(Sailplane sailplane)
         {
             await _sailplaneRepository.AddSailplaneAsync(sailplane);
-            Sailplanes.Add(sailplane);
+            await LoadSailplanesAsync(); // Reload all sailplanes after adding
         }
 
         public async Task UpdateSailplaneAsync(Sailplane sailplane)
@@ -63,16 +72,6 @@ namespace MauiApp1.ViewModel
             set
             {
                 _selectedSailplane = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public bool IsEditPopupOpen
-        {
-            get => _isEditPopupOpen;
-            set
-            {
-                _isEditPopupOpen = value;
                 OnPropertyChanged();
             }
         }

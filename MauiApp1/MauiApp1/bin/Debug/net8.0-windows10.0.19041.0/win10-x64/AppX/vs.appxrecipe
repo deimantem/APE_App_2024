@@ -29,25 +29,25 @@
     <AppXManifest Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-06-15T12:32:45.719</Modified>
+      <Modified>2024-06-15T13:32:26.685</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-06-15T12:32:04.287</Modified>
+      <Modified>2024-06-15T13:32:26.560</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\MauiApp1.runtimeconfig.json">
       <PackagePath>MauiApp1.runtimeconfig.json</PackagePath>
-      <Modified>2024-05-13T19:41:20.837</Modified>
+      <Modified>2024-06-15T12:45:00.940</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\MauiApp1.dll">
       <PackagePath>MauiApp1.dll</PackagePath>
-      <Modified>2024-06-15T12:32:44.966</Modified>
+      <Modified>2024-06-15T13:32:26.013</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>MauiApp1.exe</PackagePath>
-      <Modified>2024-06-15T12:32:44.997</Modified>
+      <Modified>2024-06-15T13:32:26.028</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -55,239 +55,239 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
       <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.840</Modified>
+      <Modified>2024-06-15T12:43:16.960</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-125.png">
       <PackagePath>splashSplashScreen.scale-125.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.840</Modified>
+      <Modified>2024-06-15T12:43:16.986</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-150.png">
       <PackagePath>splashSplashScreen.scale-150.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.842</Modified>
+      <Modified>2024-06-15T12:43:17.007</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-200.png">
       <PackagePath>splashSplashScreen.scale-200.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.842</Modified>
+      <Modified>2024-06-15T12:43:17.054</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
       <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.843</Modified>
+      <Modified>2024-06-15T12:43:17.195</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
-      <Modified>2024-05-13T19:25:44.807</Modified>
+      <Modified>2024-05-13T19:25:37.855</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Semibold.ttf">
       <PackagePath>OpenSans-Semibold.ttf</PackagePath>
-      <Modified>2024-05-13T19:25:44.809</Modified>
+      <Modified>2024-05-13T19:25:37.857</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
-      <Modified>2024-05-13T19:25:44.810</Modified>
+      <Modified>2024-06-15T12:43:18.389</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
       <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.811</Modified>
+      <Modified>2024-06-15T12:43:18.828</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
       <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.811</Modified>
+      <Modified>2024-06-15T12:43:18.860</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
       <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.813</Modified>
+      <Modified>2024-06-15T12:43:18.875</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
       <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.813</Modified>
+      <Modified>2024-06-15T12:43:18.906</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
       <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.814</Modified>
+      <Modified>2024-06-15T12:43:19.031</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-16.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.814</Modified>
+      <Modified>2024-06-15T12:43:18.515</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-24.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.815</Modified>
+      <Modified>2024-06-15T12:43:18.515</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-256.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.815</Modified>
+      <Modified>2024-06-15T12:43:18.546</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-32.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.816</Modified>
+      <Modified>2024-06-15T12:43:18.530</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-48.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.816</Modified>
+      <Modified>2024-06-15T12:43:18.530</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-16.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.817</Modified>
+      <Modified>2024-06-15T12:43:18.483</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-24.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.817</Modified>
+      <Modified>2024-06-15T12:43:18.483</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-256.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.817</Modified>
+      <Modified>2024-06-15T12:43:18.515</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-32.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.818</Modified>
+      <Modified>2024-06-15T12:43:18.483</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-48.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.819</Modified>
+      <Modified>2024-06-15T12:43:18.499</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
       <PackagePath>appiconLogo.scale-100.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.819</Modified>
+      <Modified>2024-06-15T12:43:18.405</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
       <PackagePath>appiconLogo.scale-125.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.820</Modified>
+      <Modified>2024-06-15T12:43:18.405</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
       <PackagePath>appiconLogo.scale-150.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.820</Modified>
+      <Modified>2024-06-15T12:43:18.420</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
       <PackagePath>appiconLogo.scale-200.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.821</Modified>
+      <Modified>2024-06-15T12:43:18.436</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
       <PackagePath>appiconLogo.scale-400.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.821</Modified>
+      <Modified>2024-06-15T12:43:18.436</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
       <PackagePath>appiconLogo.targetsize-16.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.822</Modified>
+      <Modified>2024-06-15T12:43:18.436</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
       <PackagePath>appiconLogo.targetsize-24.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.822</Modified>
+      <Modified>2024-06-15T12:43:18.452</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
       <PackagePath>appiconLogo.targetsize-256.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.823</Modified>
+      <Modified>2024-06-15T12:43:18.468</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
       <PackagePath>appiconLogo.targetsize-32.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.823</Modified>
+      <Modified>2024-06-15T12:43:18.452</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
       <PackagePath>appiconLogo.targetsize-48.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.824</Modified>
+      <Modified>2024-06-15T12:43:18.452</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
       <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.824</Modified>
+      <Modified>2024-06-15T12:43:18.624</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
       <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.825</Modified>
+      <Modified>2024-06-15T12:43:18.624</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
       <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.825</Modified>
+      <Modified>2024-06-15T12:43:18.640</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
       <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.826</Modified>
+      <Modified>2024-06-15T12:43:18.655</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
       <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.826</Modified>
+      <Modified>2024-06-15T12:43:18.687</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
       <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.827</Modified>
+      <Modified>2024-06-15T12:43:18.577</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
       <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.827</Modified>
+      <Modified>2024-06-15T12:43:18.577</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
       <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.828</Modified>
+      <Modified>2024-06-15T12:43:18.593</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
       <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.829</Modified>
+      <Modified>2024-06-15T12:43:18.593</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
       <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.829</Modified>
+      <Modified>2024-06-15T12:43:18.608</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
       <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.830</Modified>
+      <Modified>2024-06-15T12:43:18.546</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
       <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.830</Modified>
+      <Modified>2024-06-15T12:43:18.546</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
       <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.831</Modified>
+      <Modified>2024-06-15T12:43:18.562</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
       <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.831</Modified>
+      <Modified>2024-06-15T12:43:18.562</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
       <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.832</Modified>
+      <Modified>2024-06-15T12:43:18.577</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
       <PackagePath>appiconWideTile.scale-100.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.832</Modified>
+      <Modified>2024-06-15T12:43:18.687</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
       <PackagePath>appiconWideTile.scale-125.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.833</Modified>
+      <Modified>2024-06-15T12:43:18.702</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
       <PackagePath>appiconWideTile.scale-150.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.833</Modified>
+      <Modified>2024-06-15T12:43:18.718</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
       <PackagePath>appiconWideTile.scale-200.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.834</Modified>
+      <Modified>2024-06-15T12:43:18.749</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.834</Modified>
+      <Modified>2024-06-15T12:43:18.812</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.835</Modified>
+      <Modified>2024-06-15T12:43:18.389</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
       <PackagePath>dotnet_bot.scale-125.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.836</Modified>
+      <Modified>2024-06-15T12:43:18.389</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
       <PackagePath>dotnet_bot.scale-150.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.836</Modified>
+      <Modified>2024-06-15T12:43:18.405</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
       <PackagePath>dotnet_bot.scale-200.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.837</Modified>
+      <Modified>2024-06-15T12:43:18.436</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
-      <Modified>2024-05-13T19:25:44.840</Modified>
+      <Modified>2024-06-15T12:43:18.515</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\Desktop\Schule\App Entwicklung\APE_App_2024\MauiApp1\MauiApp1\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\MauiApp1.deps.json">
       <PackagePath>MauiApp1.deps.json</PackagePath>
-      <Modified>2024-06-15T11:08:15.751</Modified>
+      <Modified>2024-06-15T12:59:11.300</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Deimante\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.31\lib\net6.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>

@@ -16,7 +16,7 @@
             <Entry x:Name="PriceEntry" Placeholder="Enter price..." Keyboard="Numeric" />
 
             <Label Text="Description" FontSize="Medium" />
-            <Editor x:Name="DescriptionEditor" Placeholder="Enter description..." HeightRequest="100" />
+            <Editor x:Name="DescriptionEntry" Placeholder="Enter description..." HeightRequest="100" />
 
             <!-- Save Button -->
             <Button Text="Save" Clicked="SaveButton_Clicked" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Margin="0,20,0,0" />

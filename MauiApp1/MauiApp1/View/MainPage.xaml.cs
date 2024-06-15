@@ -6,16 +6,26 @@ namespace MauiApp1.View;
 
 public partial class MainPage
 {
+    private readonly MainViewModel _viewModel;
+
     public MainPage()
     {
         InitializeComponent();
         
-        BindingContext = new MainViewModel(new Sailplane(), new SailplaneRepository());
+        _viewModel = new MainViewModel(new SailplaneRepository());
     }
 
-    private void SaveButton_Clicked(object? sender, EventArgs e)
+    private async void SaveButton_Clicked(object? sender, EventArgs e)
     {
-        throw new NotImplementedException();
+        var newSailplane = new Sailplane
+        {
+            Name = NameEntry.Text,
+            Matriculation = MatriculationEntry.Text,
+            Price = decimal.Parse(PriceEntry.Text),
+            Description = DescriptionEntry.Text
+        };
+
+        await _viewModel.AddSailplaneAsync(newSailplane);
     }
 
     private void EditButton_Clicked(object? sender, EventArgs e)
