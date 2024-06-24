@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiApp1", "MauiApp1\MauiApp1.csproj", "{C1601190-91BB-4A51-B3D5-7DD1BDEE006E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Tests", "Core.Tests\Core.Tests.csproj", "{DBC5B53D-B08B-4829-BC32-EF2C11B67C51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{C1601190-91BB-4A51-B3D5-7DD1BDEE006E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1601190-91BB-4A51-B3D5-7DD1BDEE006E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1601190-91BB-4A51-B3D5-7DD1BDEE006E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBC5B53D-B08B-4829-BC32-EF2C11B67C51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBC5B53D-B08B-4829-BC32-EF2C11B67C51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBC5B53D-B08B-4829-BC32-EF2C11B67C51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBC5B53D-B08B-4829-BC32-EF2C11B67C51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
