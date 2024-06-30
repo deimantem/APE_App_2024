@@ -43,6 +43,12 @@
                                 <Label Text="{Binding Matriculation}" FontSize="Medium" />
                                 <Label Text="{Binding Price, StringFormat='Price: {0:C}'}" FontSize="Medium" />
                                 <Label Text="{Binding Description}" FontSize="Medium" />
+
+                                <!-- Edit and Delete Buttons -->
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" Margin="0,10,0,0">
+                                    <Button Text="Edit" Clicked="EditButton_Clicked" CommandParameter="{Binding .}" />
+                                    <Button Text="Delete" Clicked="DeleteButton_Clicked" CommandParameter="{Binding .}" />
+                                </StackLayout>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

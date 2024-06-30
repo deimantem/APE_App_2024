@@ -47,4 +47,14 @@ public partial class MainPage : ContentPage
     {
         throw new NotImplementedException();
     }
+
+    private void EditButton_Clicked(object? sender, EventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void DeleteButton_Clicked(object? sender, EventArgs e)
+    {
+        throw new NotImplementedException();
+    }
 }
