@@ -13,11 +13,6 @@ public partial class MainPage : ContentPage
         BindingContext = _viewModel = viewModel;
     }
 
-    private void OnCounterClicked(object? sender, EventArgs e)
-    {
-        _viewModel.Increment();
-    }
-
     private async void OnSaveClicked(object? sender, EventArgs e)
     {
         await _viewModel.Save();

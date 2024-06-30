@@ -74,12 +74,6 @@
                 </Grid.ColumnDefinitions>
 
                 <Button
-                    Text="Increment Count"
-                    SemanticProperties.Hint="Increments the count"
-                    Clicked="OnCounterClicked"
-                    HorizontalOptions="End" />
-
-                <Button
                     Grid.Column="1"
                     Text="Add"
                     SemanticProperties.Hint="Adds a new item"
