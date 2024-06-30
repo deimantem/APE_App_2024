@@ -11,8 +11,25 @@ public partial class MainPage
         InitializeComponent();
 
         BindingContext = _viewModel = viewModel;
+
+        _viewModel.DisplayAlertRequested += ViewModel_DisplayAlertRequested;
+
     }
 
+    private void ViewModel_DisplayAlertRequested(object sender, DisplayAlertEventArgs e)
+    {
+        Device.BeginInvokeOnMainThread(async () =>
+        {
+            await DisplayAlert(e.Title, e.Message, e.Cancel);
+        });
+    }
+
+    protected override void OnDisappearing()
+    {
+        base.OnDisappearing();
+        _viewModel.DisplayAlertRequested -= ViewModel_DisplayAlertRequested;
+    }
+    
     private void EditButton_Clicked(object? sender, EventArgs e)
     {
         throw new NotImplementedException();

@@ -6,6 +6,8 @@ namespace Core
 {
     public partial class MainPageViewModel : ViewModelBase
     {
+        public event EventHandler<DisplayAlertEventArgs>? DisplayAlertRequested;
+
         private readonly ILocalStorage<SailplaneModel> _localStorage;
         private string? _name = string.Empty;
         private string? _matriculation = string.Empty;
@@ -26,8 +28,41 @@ namespace Core
         }
 
         public IAsyncRelayCommand AddCommand { get; }
+
+        private bool ValidateFields()
+        {
+            if (string.IsNullOrEmpty(Name))
+            {
+                OnDisplayAlertRequested("Error", "Name cannot be empty.", "OK");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(Matriculation))
+            {
+                OnDisplayAlertRequested("Error", "Matriculation cannot be empty.", "OK");
+                return false;
+            }
+
+            if (Price <= 0)
+            {
+                OnDisplayAlertRequested("Error", "Price must be greater than zero.", "OK");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(Description))
+            {
+                OnDisplayAlertRequested("Error", "Description cannot be empty.", "OK");
+                return false;
+            }
+
+            return true;
+        }
+
         private async Task Add()
         {
+            if (!ValidateFields())
+                return;
+
             var newSailplane = new SailplaneModel
             {
                 Name = Name,
@@ -42,7 +77,14 @@ namespace Core
             {
                 Items.Add(newSailplane);
                 ClearFields();
+
+                OnDisplayAlertRequested("Success", "Item created successfully.", "OK");
             }
+        }
+
+        private void OnDisplayAlertRequested(string title, string message, string cancel)
+        {
+            DisplayAlertRequested?.Invoke(this, new DisplayAlertEventArgs(title, message, cancel));
         }
 
         // private void Edit(SailplaneModel sailplane)
