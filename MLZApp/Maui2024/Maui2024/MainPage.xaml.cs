@@ -2,7 +2,7 @@
 
 namespace Maui2024;
 
-public partial class MainPage : ContentPage
+public partial class MainPage
 {
     private readonly MainPageViewModel _viewModel;
 
@@ -20,7 +20,7 @@ public partial class MainPage : ContentPage
 
     private void DeleteButton_Clicked(object? sender, EventArgs e)
     {
-        if (sender is Button button && button.BindingContext is SailplaneModel sailplane)
+        if (sender is Button { BindingContext: SailplaneModel sailplane })
         {
             _viewModel.Delete(sailplane);
         }

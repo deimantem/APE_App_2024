@@ -45,10 +45,10 @@ namespace Core
             }
         }
 
-        private void Edit(SailplaneModel sailplane)
-        {
-            // Implement edit logic
-        }
+        // private void Edit(SailplaneModel sailplane)
+        // {
+        //     // Implement edit logic
+        // }
 
         public async void Delete(SailplaneModel? sailplane)
         {
