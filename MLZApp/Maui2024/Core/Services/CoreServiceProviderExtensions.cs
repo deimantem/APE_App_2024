@@ -1,5 +1,3 @@
-using Microsoft.Extensions.DependencyInjection;
-
 namespace Core.Services;
 
 public static class CoreServiceProviderExtensions
@@ -14,7 +12,7 @@ public static class CoreServiceProviderExtensions
         return serviceCollection
             .AddSingleton(typeof(ILocalStorage<>), typeof(SqliteLocalStorage<>))
             .AddSingleton<LocalStorageSettings>()
-            .AddSingleton<SettingsModel>()
+            .AddSingleton<SailplaneModel>()
             .AddTransient<MainPageViewModel>();
     }
 

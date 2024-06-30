@@ -1,16 +1,18 @@
 using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.Input;
 using Core.Services;
+using System.Threading.Tasks;
+using System;
 
 namespace Core
 {
     public partial class MainPageViewModel : ViewModelBase
     {
-        private readonly ILocalStorage<SettingsModel> _localStorage;
-        private string _firstName = string.Empty;
-        private string _lastName = string.Empty;
-        private int _count;
-        private SettingsModel? _selectedItem;
+        private readonly ILocalStorage<SailplaneModel> _localStorage;
+        private string? _name = string.Empty;
+        private string? _matriculation = string.Empty;
+        private decimal _price;
+        private string? _description = string.Empty;
 
         // Constructor used for detecting binding in XAML
         public MainPageViewModel()
@@ -18,73 +20,64 @@ namespace Core
             // throw new InvalidOperationException("This constructor is for detecting binding in XAML and should never be called.");
         }
 
-        public MainPageViewModel(ILocalStorage<SettingsModel> localStorage)
+        public MainPageViewModel(ILocalStorage<SailplaneModel> localStorage)
         {
             _localStorage = localStorage ?? throw new ArgumentNullException(nameof(localStorage));
+            AddCommand = new AsyncRelayCommand(Add);
         }
 
-        public string FirstName
+        public IAsyncRelayCommand AddCommand { get; }
+
+        private async Task Add()
         {
-            get => _firstName;
-            set
+            var newSailplane = new SailplaneModel
             {
-                if (SetField(ref _firstName, value))
-                {
-                    OnPropertyChanged(nameof(FullName));
-                }
+                Name = Name,
+                Matriculation = Matriculation,
+                Price = Price,
+                Description = Description
+            };
+
+            var isSaved = await _localStorage.Save(newSailplane);
+
+            if (isSaved)
+            {
+                Items.Add(newSailplane);
+                ClearFields();
             }
         }
 
-        public string LastName
+        public string? Name
         {
-            get => _lastName;
-            set
-            {
-                if (SetField(ref _lastName, value))
-                {
-                    OnPropertyChanged(nameof(FullName));
-                }
-            }
+            get => _name;
+            set => SetField(ref _name, value);
         }
 
-        public object FullName => $"{LastName}, {FirstName}";
-
-        public int Count
+        public string? Matriculation
         {
-            get => _count;
-            set => SetField(ref _count, value);
+            get => _matriculation;
+            set => SetField(ref _matriculation, value);
         }
 
-        public bool IsReady => SelectedItem != null;
-
-        public ObservableCollection<SettingsModel> Items { get; private set; } = new();
-
-        public SettingsModel? SelectedItem
+        public decimal Price
         {
-            get => _selectedItem;
-            set
-            {
-                if (SetField(ref _selectedItem, value))
-                {
-                    if (value != null)
-                    {
-                        FirstName = value.FirstName;
-                        LastName = value.LastName;
-                        Count = value.Count;
-                    }
-                    else
-                    {
-                        FirstName = string.Empty;
-                        LastName = string.Empty;
-                        Count = 0;
-                    }
-                }
-            }
+            get => _price;
+            set => SetField(ref _price, value);
         }
 
-        public void Increment()
+        public string? Description
         {
-            Count += 1;
+            get => _description;
+            set => SetField(ref _description, value);
+        }
+
+        public ObservableCollection<SailplaneModel> Items { get; private set; } = new();
+
+        public bool IsReady => !string.IsNullOrEmpty(Name) && !string.IsNullOrEmpty(Matriculation) && Price > 0;
+
+        public void IncrementPrice()
+        {
+            Price += 1;
         }
 
         [RelayCommand]
@@ -96,19 +89,12 @@ namespace Core
                 {
                     await _localStorage.Initialize();
 
-                    var settingsModels = await _localStorage.LoadAll();
+                    var sailplaneModels = await _localStorage.LoadAll();
 
-                    foreach (var settingsModel in settingsModels)
+                    foreach (var sailplaneModel in sailplaneModels)
                     {
-                        Items.Add(settingsModel);
+                        Items.Add(sailplaneModel);
                     }
-
-                    if (Items.Count == 0)
-                    {
-                        Items.Add(new SettingsModel());
-                    }
-
-                    SelectedItem = Items.First();
 
                     OnPropertyChanged(nameof(IsReady));
                 }
@@ -120,29 +106,12 @@ namespace Core
             }
         }
 
-        public async Task Save()
+        private void ClearFields()
         {
-            var model = SelectedItem;
-
-            if (model == null)
-            {
-                throw new InvalidOperationException("Cannot save a non-existent model");
-            }
-
-            model.FirstName = FirstName;
-            model.LastName = LastName;
-            model.Count = Count;
-
-            await _localStorage.Save(model);
-        }
-
-        public void Add()
-        {
-            var settingsModel = new SettingsModel();
-
-            Items.Add(settingsModel);
-
-            SelectedItem = settingsModel;
+            Name = string.Empty;
+            Matriculation = string.Empty;
+            Price = 0;
+            Description = string.Empty;
         }
     }
 }

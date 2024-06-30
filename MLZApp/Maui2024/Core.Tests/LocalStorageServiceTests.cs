@@ -9,72 +9,84 @@ namespace Core.Tests
         public async Task TestSaveAndLoad()
         {
             var localStorage = await GetLocalStorage();
-            var settingsModel = CreateSettingsModel();
+            var sailplaneModel = CreateSettingsModel();
 
-            Assert.That(settingsModel.Id, Is.Null);
+            Assert.That(sailplaneModel.Id, Is.Null);
 
-            var saved = await localStorage.Save(settingsModel);
+            var saved = await localStorage.Save(sailplaneModel);
             Assert.Multiple(() =>
             {
                 Assert.That(saved, "Object was not saved");
-                Assert.That(settingsModel.Id, Is.Not.Zero);
+                Assert.That(sailplaneModel.Id, Is.Not.Zero);
             });
 
-            var loadedSettingsModel = await localStorage.Load(settingsModel.Id.Value);
+            if (sailplaneModel.Id != null)
+            {
+                var loadedSettingsModel = await localStorage.Load(sailplaneModel.Id.Value);
 
-            Assert.That(loadedSettingsModel.Id, Is.EqualTo(settingsModel.Id));
+                Assert.That(loadedSettingsModel.Id, Is.EqualTo(sailplaneModel.Id));
+            }
         }
 
         [Test]
         public async Task TestSaveAndTryLoad()
         {
             var localStorage = await GetLocalStorage();
-            var settingsModel = CreateSettingsModel();
+            var sailplaneModel = CreateSettingsModel();
 
-            Assert.That(settingsModel.Id, Is.Null);
+            Assert.That(sailplaneModel.Id, Is.Null);
 
-            var saved = await localStorage.Save(settingsModel);
+            var saved = await localStorage.Save(sailplaneModel);
             Assert.Multiple(() =>
             {
                 Assert.That(saved, "Object was not saved");
-                Assert.That(settingsModel.Id, Is.Not.Zero);
+                Assert.That(sailplaneModel.Id, Is.Not.Zero);
             });
 
-            var loadedSettingsModel = await localStorage.TryLoad(settingsModel.Id.Value);
-
-            Assert.Multiple(() =>
+            if (sailplaneModel.Id != null)
             {
-                Assert.That(loadedSettingsModel, Is.Not.Null, $"Could not load item with Id = [{settingsModel.Id}]");
-                Assert.That(loadedSettingsModel!.Id, Is.EqualTo(settingsModel.Id));
-            });
+                var loadedSettingsModel = await localStorage.TryLoad(sailplaneModel.Id.Value);
+
+                Assert.Multiple(() =>
+                {
+                    Assert.That(loadedSettingsModel, Is.Not.Null, $"Could not load item with Id = [{sailplaneModel.Id}]");
+                    Assert.That(loadedSettingsModel!.Id, Is.EqualTo(sailplaneModel.Id));
+                });
+            }
         }
 
         [Test]
         public async Task TestSaveLoadAndDelete()
         {
             var localStorage = await GetLocalStorage();
-            var settingsModel = CreateSettingsModel();
+            var sailplaneModel = CreateSettingsModel();
 
-            Assert.That(settingsModel.Id, Is.Null);
+            Assert.That(sailplaneModel.Id, Is.Null);
 
-            var saved = await localStorage.Save(settingsModel);
+            var saved = await localStorage.Save(sailplaneModel);
             Assert.Multiple(() =>
             {
                 Assert.That(saved, "Object was not saved");
-                Assert.That(settingsModel.Id, Is.Not.Zero);
+                Assert.That(sailplaneModel.Id, Is.Not.Zero);
             });
 
-            var loadedSettingsModel = await localStorage.Load(settingsModel.Id.Value);
+            if (sailplaneModel.Id != null)
+            {
+                var loadedSettingsModel = await localStorage.Load(sailplaneModel.Id.Value);
 
-            Assert.That(loadedSettingsModel.Id, Is.EqualTo(settingsModel.Id));
+                Assert.That(loadedSettingsModel.Id, Is.EqualTo(sailplaneModel.Id));
 
-            var deleted = await localStorage.Delete(loadedSettingsModel);
+                var deleted = await localStorage.Delete(loadedSettingsModel);
 
-            Assert.That(deleted, "Object was not deleted.");
+                Assert.That(deleted, "Object was not deleted.");
+            }
 
-            var settingsModelWithId = await localStorage.TryLoad(settingsModel.Id.Value);
+            if (sailplaneModel.Id != null)
+            {
+                var settingsModelWithId = await localStorage.TryLoad(sailplaneModel.Id.Value);
 
-            Assert.That(settingsModelWithId, Is.Null, "Object should no longer exist.");
+                Assert.That(settingsModelWithId, Is.Null, "Object should no longer exist.");
+            }
         }
 
         [Test]
@@ -105,25 +117,24 @@ namespace Core.Tests
         {
             return base.AddServices(serviceCollection)
                 .AddSingleton(new LocalStorageSettings { DatabaseFilename = "Maui2024Tests.db3" })
-                .AddSingleton<ILocalStorage<SettingsModel>, SqliteLocalStorage<SettingsModel>>();
+                .AddSingleton<ILocalStorage<SailplaneModel>, SqliteLocalStorage<SailplaneModel>>();
         }
 
-        private async Task<ILocalStorage<SettingsModel>> GetLocalStorage()
+        private async Task<ILocalStorage<SailplaneModel>> GetLocalStorage()
         {
             var serviceProvider = CreateServiceProvider();
-            var localStorage = serviceProvider.GetRequiredService<ILocalStorage<SettingsModel>>();
+            var localStorage = serviceProvider.GetRequiredService<ILocalStorage<SailplaneModel>>();
 
             await localStorage.Initialize();
             return localStorage;
         }
 
-        private static SettingsModel CreateSettingsModel()
+        private static SailplaneModel CreateSettingsModel()
         {
-            return new SettingsModel
+            return new SailplaneModel
             {
-                FirstName = "John",
-                LastName = "Doe",
-                Count = 4
+                Name = "Discus 2b",
+                Description = "Best glider ever"
             };
         }
     }

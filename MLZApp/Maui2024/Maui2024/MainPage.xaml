@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:core="clr-namespace:Core;assembly=Core"
@@ -17,78 +16,38 @@
     </ContentPage.Behaviors>
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <!-- Input fields for Sailplane data -->
+            <Label Text="Name" FontSize="Medium" />
+            <Entry x:Name="NameEntry" Text="{Binding Name, Mode=TwoWay}" Placeholder="Enter name..." />
 
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+            <Label Text="Matriculation" FontSize="Medium" />
+            <Entry x:Name="MatriculationEntry" Text="{Binding Matriculation, Mode=TwoWay}" Placeholder="Enter matriculation..." />
 
-                <Label Text="{Binding FullName}"
-                       Style="{StaticResource Headline}"
-                       HorizontalOptions="Start" />
+            <Label Text="Price" FontSize="Medium" />
+            <Entry x:Name="PriceEntry" Text="{Binding Price, Mode=TwoWay}" Placeholder="Enter price..." Keyboard="Numeric" />
 
-                <Label Text="{Binding Count}"
-                       Style="{StaticResource Headline}"
-                       HorizontalOptions="End"
-                       Grid.Column="1" />
-            </Grid>
+            <Label Text="Description" FontSize="Medium" />
+            <Editor x:Name="DescriptionEntry" Text="{Binding Description, Mode=TwoWay}" Placeholder="Enter description..." HeightRequest="100" />
 
-            <Entry Text="{Binding FirstName, Mode=TwoWay}"
-                   Placeholder="Please enter your first name" />
+            <!-- Save Button -->
+            <Button Text="Save" Command="{Binding AddCommand}" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Margin="0,20,0,0" />
 
-            <Entry Text="{Binding LastName, Mode=TwoWay}"
-                   Placeholder="Please enter your last name" />
-
-            <ListView ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" HeightRequest="400">
+            <!-- ListView to display Sailplanes -->
+            <ListView ItemsSource="{Binding Items}" SelectionMode="Single">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid Padding="10">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="250" />
-                                    <ColumnDefinition Width="250" />
-                                    <ColumnDefinition Width="20" />
-                                </Grid.ColumnDefinitions>
-                                <Label Grid.Column="0"
-                                       Text="{Binding FirstName}" />
-                                <Label Grid.Column="1"
-                                       Text="{Binding LastName}" />
-                                <Label Grid.Column="2"
-                                       Text="{Binding Count}"
-                                       VerticalOptions="End" />
-                            </Grid>
+                            <StackLayout Padding="10" BackgroundColor="#f0f0f0" Margin="0,5,0,5">
+                                <Label Text="{Binding Name}" FontSize="Medium" />
+                                <Label Text="{Binding Matriculation}" FontSize="Medium" />
+                                <Label Text="{Binding Price, StringFormat='Price: {0:C}'}" FontSize="Medium" />
+                                <Label Text="{Binding Description}" FontSize="Medium" />
+                            </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
-            <Grid ColumnSpacing="20">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-
-                <Button
-                    Grid.Column="1"
-                    Text="Add"
-                    SemanticProperties.Hint="Adds a new item"
-                    Clicked="OnAddClicked"
-                    IsEnabled="{Binding IsReady}"
-                    HorizontalOptions="Start" />
-
-                <Button
-                    Grid.Column="2"
-                    Text="Save"
-                    SemanticProperties.Hint="Saves all data"
-                    Clicked="OnSaveClicked"
-                    IsEnabled="{Binding IsReady}"
-                    HorizontalOptions="Start" />
-            </Grid>
         </VerticalStackLayout>
     </ScrollView>
 
