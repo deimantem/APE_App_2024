@@ -1,8 +1,6 @@
 using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.Input;
 using Core.Services;
-using System.Threading.Tasks;
-using System;
 
 namespace Core
 {
@@ -23,11 +21,11 @@ namespace Core
         public MainPageViewModel(ILocalStorage<SailplaneModel> localStorage)
         {
             _localStorage = localStorage ?? throw new ArgumentNullException(nameof(localStorage));
+
             AddCommand = new AsyncRelayCommand(Add);
         }
 
         public IAsyncRelayCommand AddCommand { get; }
-
         private async Task Add()
         {
             var newSailplane = new SailplaneModel
@@ -44,6 +42,24 @@ namespace Core
             {
                 Items.Add(newSailplane);
                 ClearFields();
+            }
+        }
+
+        private void Edit(SailplaneModel sailplane)
+        {
+            // Implement edit logic
+        }
+
+        public async void Delete(SailplaneModel? sailplane)
+        {
+            if (sailplane != null)
+            {
+                var isDeleted = await _localStorage.Delete(sailplane);
+
+                if (isDeleted)
+                {
+                    Items.Remove(sailplane);
+                }
             }
         }
 

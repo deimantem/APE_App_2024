@@ -13,41 +13,6 @@ public partial class MainPage : ContentPage
         BindingContext = _viewModel = viewModel;
     }
 
-    // private async void OnSaveClicked(object? sender, EventArgs e)
-    // {
-    //     var newSailplane = new SailplaneModel
-    //     {
-    //         Name = NameEntry.Text,
-    //         Matriculation = MatriculationEntry.Text,
-    //         Price = decimal.Parse(PriceEntry.Text),
-    //         Description = DescriptionEntry.Text
-    //     };
-    //
-    //     _viewModel.Add(newSailplane);
-    //
-    //     await DisplayAlert("Save complete", "Your data has been saved.", "OK");
-    //
-    //     ClearFields();
-    // }
-
-    private void ClearFields()
-    {
-        NameEntry.Text = string.Empty;
-        MatriculationEntry.Text = string.Empty;
-        PriceEntry.Text = string.Empty;
-        DescriptionEntry.Text = string.Empty;
-    }
-
-    private void OnEditClicked(object? sender, EventArgs e)
-    {
-        throw new NotImplementedException();
-    }
-
-    private void OnDeleteClicked(object? sender, EventArgs e)
-    {
-        throw new NotImplementedException();
-    }
-
     private void EditButton_Clicked(object? sender, EventArgs e)
     {
         throw new NotImplementedException();
@@ -55,6 +20,9 @@ public partial class MainPage : ContentPage
 
     private void DeleteButton_Clicked(object? sender, EventArgs e)
     {
-        throw new NotImplementedException();
+        if (sender is Button button && button.BindingContext is SailplaneModel sailplane)
+        {
+            _viewModel.Delete(sailplane);
+        }
     }
 }
