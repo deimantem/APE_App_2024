@@ -2,145 +2,147 @@ using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.Input;
 using Core.Services;
 
-namespace Core;
-
-public partial class MainPageViewModel : ViewModelBase
+namespace Core
 {
-    private readonly ILocalStorage _localStorage;
-    private string _firstName = string.Empty;
-    private string _lastName = string.Empty;
-    private int _count;
-    private SettingsModel? _selectedItem;
-
-    public MainPageViewModel()
+    public partial class MainPageViewModel : ViewModelBase
     {
-        // throw new InvalidOperationException("This constructor is for detecting binding in XAML and should never be called.");
-    }
+        private readonly ILocalStorage<SettingsModel> _localStorage;
+        private string _firstName = string.Empty;
+        private string _lastName = string.Empty;
+        private int _count;
+        private SettingsModel? _selectedItem;
 
-    public MainPageViewModel(ILocalStorage localStorage)
-    {
-        _localStorage = localStorage ?? throw new ArgumentNullException(nameof(localStorage));
-    }
-
-    public string FirstName
-    {
-        get => _firstName;
-        set
+        // Constructor used for detecting binding in XAML
+        public MainPageViewModel()
         {
-            if (SetField(ref _firstName, value))
-            {
-                OnPropertyChanged(nameof(FullName));
-            }
+            // throw new InvalidOperationException("This constructor is for detecting binding in XAML and should never be called.");
         }
-    }
 
-    public string LastName
-    {
-        get => _lastName;
-        set
+        public MainPageViewModel(ILocalStorage<SettingsModel> localStorage)
         {
-            if (SetField(ref _lastName, value))
-            {
-                OnPropertyChanged(nameof(FullName));
-            }
+            _localStorage = localStorage ?? throw new ArgumentNullException(nameof(localStorage));
         }
-    }
 
-    public object FullName => $"{LastName}, {FirstName}";
-
-    public int Count
-    {
-        get => _count;
-        set => SetField(ref _count, value);
-    }
-
-    public bool IsReady => SelectedItem != null;
-
-    public ObservableCollection<SettingsModel> Items { get; private set; } = new();
-
-    public SettingsModel? SelectedItem
-    {
-        get => _selectedItem;
-        set
+        public string FirstName
         {
-            if (SetField(ref _selectedItem, value))
+            get => _firstName;
+            set
             {
-                if (value != null)
+                if (SetField(ref _firstName, value))
                 {
-                    FirstName = value.FirstName;
-                    LastName = value.LastName;
-                    Count = value.Count;
-                }
-                else
-                {
-                    FirstName = string.Empty;
-                    LastName = string.Empty;
-                    Count = 0;
+                    OnPropertyChanged(nameof(FullName));
                 }
             }
         }
-    }
 
-    public void Increment()
-    {
-        Count += 1;
-    }
-
-    [RelayCommand]
-    public async Task EnsureModelLoaded()
-    {
-        if (Items.Count == 0)
+        public string LastName
         {
-            try
+            get => _lastName;
+            set
             {
-                await _localStorage.Initialize();
-
-                var settingsModels = await _localStorage.LoadAll();
-
-                foreach (var settingsModel in settingsModels)
+                if (SetField(ref _lastName, value))
                 {
-                    Items.Add(settingsModel);
+                    OnPropertyChanged(nameof(FullName));
                 }
-
-                if (Items.Count == 0)
-                {
-                    Items.Add(new SettingsModel());
-                }
-
-                SelectedItem = Items.First();
-
-                OnPropertyChanged(nameof(IsReady));
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
             }
         }
-    }
 
-    public async Task Save()
-    {
-        var model = SelectedItem;
+        public object FullName => $"{LastName}, {FirstName}";
 
-        if (model == null)
+        public int Count
         {
-            throw new InvalidOperationException("Cannot save a non-existent model");
+            get => _count;
+            set => SetField(ref _count, value);
         }
 
-        model.FirstName = FirstName;
-        model.LastName = LastName;
-        model.Count = Count;
+        public bool IsReady => SelectedItem != null;
 
-        await _localStorage.Save(model);
-    }
+        public ObservableCollection<SettingsModel> Items { get; private set; } = new();
 
-    public void Add()
-    {
-        var settingsModel = new SettingsModel();
+        public SettingsModel? SelectedItem
+        {
+            get => _selectedItem;
+            set
+            {
+                if (SetField(ref _selectedItem, value))
+                {
+                    if (value != null)
+                    {
+                        FirstName = value.FirstName;
+                        LastName = value.LastName;
+                        Count = value.Count;
+                    }
+                    else
+                    {
+                        FirstName = string.Empty;
+                        LastName = string.Empty;
+                        Count = 0;
+                    }
+                }
+            }
+        }
 
-        Items.Add(settingsModel);
+        public void Increment()
+        {
+            Count += 1;
+        }
 
-        SelectedItem = settingsModel;
+        [RelayCommand]
+        public async Task EnsureModelLoaded()
+        {
+            if (Items.Count == 0)
+            {
+                try
+                {
+                    await _localStorage.Initialize();
+
+                    var settingsModels = await _localStorage.LoadAll();
+
+                    foreach (var settingsModel in settingsModels)
+                    {
+                        Items.Add(settingsModel);
+                    }
+
+                    if (Items.Count == 0)
+                    {
+                        Items.Add(new SettingsModel());
+                    }
+
+                    SelectedItem = Items.First();
+
+                    OnPropertyChanged(nameof(IsReady));
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+            }
+        }
+
+        public async Task Save()
+        {
+            var model = SelectedItem;
+
+            if (model == null)
+            {
+                throw new InvalidOperationException("Cannot save a non-existent model");
+            }
+
+            model.FirstName = FirstName;
+            model.LastName = LastName;
+            model.Count = Count;
+
+            await _localStorage.Save(model);
+        }
+
+        public void Add()
+        {
+            var settingsModel = new SettingsModel();
+
+            Items.Add(settingsModel);
+
+            SelectedItem = settingsModel;
+        }
     }
 }

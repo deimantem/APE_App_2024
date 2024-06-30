@@ -1,53 +1,58 @@
 using SQLite;
 
-namespace Core.Services;
-
-public class SqliteLocalStorage : ILocalStorage
+namespace Core.Services
 {
-    private readonly SQLiteAsyncConnection _connection;
-
-    public SqliteLocalStorage(LocalStorageSettings settings)
+    public class SqliteLocalStorage<T> : ILocalStorage<T> where T : class, new()
     {
-        var options = new SQLiteConnectionString(settings.DatabasePath);
-        _connection = new SQLiteAsyncConnection(options);
-    }
+        private readonly SQLiteAsyncConnection _connection;
 
-    public async Task Initialize()
-    {
-        // Check whether our table already exists. If not, we're creating it here.
-        if (_connection.TableMappings.All(x =>
-                !x.TableName.Equals(nameof(SettingsModel), StringComparison.InvariantCultureIgnoreCase)))
+        public SqliteLocalStorage(LocalStorageSettings settings)
         {
-            await _connection.CreateTableAsync<SettingsModel>();
+            var options = new SQLiteConnectionString(settings.DatabasePath);
+            _connection = new SQLiteAsyncConnection(options);
         }
-    }
 
-    public async Task<bool> Delete(SettingsModel settingsModel)
-    {
-        return await _connection.DeleteAsync<SettingsModel>(settingsModel.Id) == 1;
-    }
+        public async Task Initialize()
+        {
+            if (_connection.TableMappings.All(x =>
+                    !x.TableName.Equals(typeof(T).Name, StringComparison.InvariantCultureIgnoreCase)))
+            {
+                await _connection.CreateTableAsync<T>();
+            }
+        }
 
-    /// <inheritdoc/>
-    public Task<List<SettingsModel>> LoadAll()
-    {
-        return _connection.Table<SettingsModel>().ToListAsync();
-    }
+        public async Task<bool> Delete(T item)
+        {
+            var primaryKeyProperty = typeof(T).GetProperties()
+                .FirstOrDefault(p => p.GetCustomAttributes(typeof(PrimaryKeyAttribute), true).Any());
 
-    /// <inheritdoc/>
-    public async Task<bool> DeleteAll()
-    {
-        return await _connection.DeleteAllAsync<SettingsModel>() >= 0;
-    }
+            if (primaryKeyProperty == null)
+            {
+                throw new InvalidOperationException("No primary key defined on the entity.");
+            }
 
-    /// <inheritdoc/>
-    public async Task<bool> Save(SettingsModel settingsModel)
-    {
-        return await _connection.InsertOrReplaceAsync(settingsModel) == 1;
-    }
+            var primaryKeyValue = primaryKeyProperty.GetValue(item);
+            return await _connection.DeleteAsync<T>(primaryKeyValue) == 1;
+        }
 
-    /// <inheritdoc/>
-    public async Task<SettingsModel?> TryLoad(int id)
-    {
-        return await _connection.FindAsync<SettingsModel?>(id);
+        public Task<List<T>> LoadAll()
+        {
+            return _connection.Table<T>().ToListAsync();
+        }
+
+        public async Task<bool> DeleteAll()
+        {
+            return await _connection.DeleteAllAsync<T>() >= 0;
+        }
+
+        public async Task<bool> Save(T item)
+        {
+            return await _connection.InsertOrReplaceAsync(item) == 1;
+        }
+
+        public async Task<T?> TryLoad(int id)
+        {
+            return await _connection.FindAsync<T>(id);
+        }
     }
 }

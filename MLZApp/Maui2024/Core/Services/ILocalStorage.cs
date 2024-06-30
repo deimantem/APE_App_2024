@@ -1,18 +1,48 @@
-namespace Core.Services;
-
-public interface ILocalStorage
+namespace Core.Services
 {
-    // TODO Make the interface generic rather than SettingsModel-specifics
-    // TODO Add documentation
+    /// <summary>
+    /// Interface for local storage operations.
+    /// </summary>
+    /// <typeparam name="T">The type of the object to be stored.</typeparam>
+    public interface ILocalStorage<T>
+    {
+        /// <summary>
+        /// Tries to load an object from storage by its identifier.
+        /// </summary>
+        /// <param name="id">The identifier of the object.</param>
+        /// <returns>A task that represents the asynchronous operation. The task result contains the loaded object, or null if not found.</returns>
+        Task<T?> TryLoad(int id);
 
-    Task<SettingsModel?> TryLoad(int id);
+        /// <summary>
+        /// Saves an object to storage.
+        /// </summary>
+        /// <param name="item">The object to be saved.</param>
+        /// <returns>A task that represents the asynchronous operation. The task result indicates whether the save operation succeeded.</returns>
+        Task<bool> Save(T item);
 
-    Task<bool> Save(SettingsModel settingsModel);
+        /// <summary>
+        /// Deletes an object from storage.
+        /// </summary>
+        /// <param name="item">The object to be deleted.</param>
+        /// <returns>A task that represents the asynchronous operation. The task result indicates whether the delete operation succeeded.</returns>
+        Task<bool> Delete(T item);
 
-    Task<bool> Delete(SettingsModel settingsModel);
+        /// <summary>
+        /// Loads all objects from storage.
+        /// </summary>
+        /// <returns>A task that represents the asynchronous operation. The task result contains a list of all loaded objects.</returns>
+        Task<List<T>> LoadAll();
 
-    Task<List<SettingsModel>> LoadAll();
+        /// <summary>
+        /// Deletes all objects from storage.
+        /// </summary>
+        /// <returns>A task that represents the asynchronous operation. The task result indicates whether the delete all operation succeeded.</returns>
+        Task<bool> DeleteAll();
 
-    Task<bool> DeleteAll();
-    Task Initialize();
+        /// <summary>
+        /// Initializes the storage system.
+        /// </summary>
+        /// <returns>A task that represents the asynchronous operation.</returns>
+        Task Initialize();
+    }
 }
