@@ -29,7 +29,7 @@ public partial class MainPage
         base.OnDisappearing();
         _viewModel.DisplayAlertRequested -= ViewModel_DisplayAlertRequested;
     }
-    
+
     private void EditButton_Clicked(object? sender, EventArgs e)
     {
         throw new NotImplementedException();
