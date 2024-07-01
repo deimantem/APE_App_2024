@@ -23,6 +23,8 @@
         <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource Gray200}}" />
     </Style>
 
+    <Color x:Key="AgeColumnColor">#FF4080</Color>
+
     <Style TargetType="Button" x:Key="OrangeButtonStyle">
         <Setter Property="BackgroundColor" Value="#FF8000" />
         <Setter Property="WidthRequest" Value="150" />
