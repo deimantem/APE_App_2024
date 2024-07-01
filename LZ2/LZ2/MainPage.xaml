@@ -43,23 +43,27 @@
             <Entry Text="{Binding LastName, Mode=TwoWay}"
                    Placeholder="Please enter your last name" />
 
+            <Entry Placeholder="PLZ" Text="{Binding Plz, Mode=TwoWay}" />
+
             <ListView ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" HeightRequest="400">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <Grid Padding="10">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="250" />
-                                    <ColumnDefinition Width="250" />
-                                    <ColumnDefinition Width="20" />
+                                    <ColumnDefinition Width="150" />
+                                    <ColumnDefinition Width="150" />
+                                    <ColumnDefinition Width="150" />
+                                    <ColumnDefinition Width="100" />
                                 </Grid.ColumnDefinitions>
                                 <Label Grid.Column="0"
                                        Text="{Binding FirstName}" />
                                 <Label Grid.Column="1"
                                        Text="{Binding LastName}" />
                                 <Label Grid.Column="2"
-                                       Text="{Binding Age}"
-                                       VerticalOptions="End" />
+                                       Text="{Binding Age}" />
+                                <Label Grid.Column="3"
+                                       Text="{Binding Plz}" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

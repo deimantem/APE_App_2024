@@ -11,6 +11,7 @@ public partial class MainPageViewModel : ViewModelBase
     private string _firstName = string.Empty;
     private string _lastName = string.Empty;
     private int _age;
+    private string _plz = string.Empty;
     private Person? _selectedItem;
 
     public MainPageViewModel()
@@ -47,6 +48,11 @@ public partial class MainPageViewModel : ViewModelBase
         }
     }
 
+    public string Plz
+    {
+        get => _plz;
+        set => SetField(ref _plz, value);
+    }
     public object FullName => $"{LastName}, {FirstName}";
 
     public int Age
@@ -62,7 +68,7 @@ public partial class MainPageViewModel : ViewModelBase
     public Person? SelectedItem
     {
         get => _selectedItem;
-        set
+        private set
         {
             if (SetField(ref _selectedItem, value))
             {
@@ -71,12 +77,14 @@ public partial class MainPageViewModel : ViewModelBase
                     FirstName = value.FirstName;
                     LastName = value.LastName;
                     Age = value.Age;
+                    Plz = value.Plz;
                 }
                 else
                 {
                     FirstName = string.Empty;
                     LastName = string.Empty;
                     Age = 0;
+                    Plz = string.Empty;
                 }
             }
         }
@@ -132,6 +140,7 @@ public partial class MainPageViewModel : ViewModelBase
         model.FirstName = FirstName;
         model.LastName = LastName;
         model.Age = Age;
+        model.Plz = Plz;
 
         await _localStorage.Save(model);
     }
