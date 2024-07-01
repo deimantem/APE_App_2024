@@ -1,4 +1,5 @@
 using Core.Services;
+using Core.ViewModels;
 
 namespace Core.Tests;
 

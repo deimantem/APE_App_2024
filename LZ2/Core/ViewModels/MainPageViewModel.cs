@@ -3,11 +3,13 @@ using CommunityToolkit.Mvvm.Input;
 using Core.Models;
 using Core.Services;
 
-namespace Core;
+namespace Core.ViewModels;
 
 public partial class MainPageViewModel : ViewModelBase
 {
     private readonly ILocalStorage _localStorage;
+    private readonly IPersonService _personService;
+
     private string _firstName = string.Empty;
     private string _lastName = string.Empty;
     private int _age;
@@ -19,9 +21,10 @@ public partial class MainPageViewModel : ViewModelBase
         // throw new InvalidOperationException("This constructor is for detecting binding in XAML and should never be called.");
     }
 
-    public MainPageViewModel(ILocalStorage localStorage)
+    public MainPageViewModel(ILocalStorage localStorage, IPersonService personService)
     {
         _localStorage = localStorage ?? throw new ArgumentNullException(nameof(localStorage));
+        _personService = personService ?? throw new ArgumentNullException(nameof(personService));
     }
 
     public string FirstName
@@ -58,7 +61,7 @@ public partial class MainPageViewModel : ViewModelBase
     public int Age
     {
         get => _age;
-        set => SetField(ref _age, value);
+        private set => SetField(ref _age, value);
     }
 
     public bool IsReady => SelectedItem != null;
@@ -142,7 +145,7 @@ public partial class MainPageViewModel : ViewModelBase
         model.Age = Age;
         model.Plz = Plz;
 
-        await _localStorage.Save(model);
+        await _personService.Save(model);
     }
 
     public void Add()
