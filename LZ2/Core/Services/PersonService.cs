@@ -15,5 +15,19 @@ namespace Core.Services
         {
             return await _localStorage.Save(person);
         }
+
+        public async Task<List<Person>> Load()
+        {
+            await _localStorage.Initialize();
+
+            var people = await _localStorage.LoadAll();
+
+            if (people.Count == 0)
+            {
+                people.Add(new Person());
+            }
+
+            return people;
+        }
     }
 }

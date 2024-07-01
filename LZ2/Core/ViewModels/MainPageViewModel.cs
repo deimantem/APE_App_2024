@@ -105,14 +105,7 @@ public partial class MainPageViewModel : ViewModelBase
         {
             try
             {
-                await _localStorage.Initialize();
-
-                var people = await _localStorage.LoadAll();
-
-                if (people.Count == 0)
-                {
-                    people.Add(new Person());
-                }
+                var people = await _personService.Load();
 
                 foreach (var person in people)
                 {
@@ -130,7 +123,6 @@ public partial class MainPageViewModel : ViewModelBase
             }
         }
     }
-
     public async Task Save()
     {
         var model = SelectedItem;
