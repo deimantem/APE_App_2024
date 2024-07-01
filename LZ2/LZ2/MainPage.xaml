@@ -81,7 +81,9 @@
                     Text="Increment Age"
                     SemanticProperties.Hint="Increments the count"
                     Clicked="OnCounterClicked"
-                    HorizontalOptions="End" />
+                    HorizontalOptions="End"
+                    Style="{StaticResource OrangeButtonStyle}"
+                    />
 
                 <Button
                     Grid.Column="1"
@@ -89,7 +91,9 @@
                     SemanticProperties.Hint="Adds a new item"
                     Clicked="OnAddClicked"
                     IsEnabled="{Binding IsReady}"
-                    HorizontalOptions="Start" />
+                    HorizontalOptions="Start"
+                    Style="{StaticResource OrangeButtonStyle}"
+                    />
 
                 <Button
                     Grid.Column="2"
@@ -97,7 +101,9 @@
                     SemanticProperties.Hint="Saves all data"
                     Clicked="OnSaveClicked"
                     IsEnabled="{Binding IsReady}"
-                    HorizontalOptions="Start" />
+                    HorizontalOptions="Start"
+                    Style="{StaticResource OrangeButtonStyle}"
+                    />
             </Grid>
         </VerticalStackLayout>
     </ScrollView>
