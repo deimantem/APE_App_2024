@@ -16,4 +16,8 @@ public class SailplaneModel
     public decimal Price { get; set; }
 
     public string? Description { get; set; }
+
+    public DateTime? YearOfConstruction { get; set; }
+
+    public bool? IsNewSailplane { get; set; }
 }

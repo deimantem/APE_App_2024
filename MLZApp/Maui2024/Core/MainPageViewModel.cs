@@ -13,6 +13,8 @@ namespace Core
         private string? _matriculation = string.Empty;
         private decimal _price;
         private string? _description = string.Empty;
+        private DateTime? _yearOfConstruction;
+        private bool _isNewSailplane;
 
         // Constructor used for detecting binding in XAML
         public MainPageViewModel()
@@ -25,9 +27,12 @@ namespace Core
             _localStorage = localStorage ?? throw new ArgumentNullException(nameof(localStorage));
 
             AddCommand = new AsyncRelayCommand(Add);
+
+            ToggleIsNewSailplaneCommand = new RelayCommand<object>(ToggleIsNewSailplane);
         }
 
         public IAsyncRelayCommand AddCommand { get; }
+        public RelayCommand<object> ToggleIsNewSailplaneCommand { get; }
 
         private bool ValidateFields()
         {
@@ -68,7 +73,9 @@ namespace Core
                 Name = Name,
                 Matriculation = Matriculation,
                 Price = Price,
-                Description = Description
+                Description = Description,
+                YearOfConstruction = YearOfConstruction,
+                IsNewSailplane = IsNewSailplane
             };
 
             var isSaved = await _localStorage.Save(newSailplane);
@@ -128,6 +135,19 @@ namespace Core
             get => _description;
             set => SetField(ref _description, value);
         }
+        
+           public DateTime? YearOfConstruction
+        {
+            get => _yearOfConstruction;
+            set => SetField(ref _yearOfConstruction, value);
+        }
+
+
+        public bool IsNewSailplane
+        {
+            get => _isNewSailplane;
+            set => SetField(ref _isNewSailplane, value);
+        }
 
         public ObservableCollection<SailplaneModel> Items { get; private set; } = new();
 
@@ -170,6 +190,13 @@ namespace Core
             Matriculation = string.Empty;
             Price = 0;
             Description = string.Empty;
+            YearOfConstruction = null;
+            IsNewSailplane = false;
+        }
+
+        private void ToggleIsNewSailplane(object? obj)
+        {
+            IsNewSailplane = !IsNewSailplane;
         }
     }
 }
