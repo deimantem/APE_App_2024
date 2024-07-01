@@ -7,7 +7,6 @@ namespace Core.ViewModels;
 
 public partial class MainPageViewModel : ViewModelBase
 {
-    private readonly ILocalStorage _localStorage;
     private readonly IPersonService _personService;
 
     private string _firstName = string.Empty;
@@ -21,9 +20,8 @@ public partial class MainPageViewModel : ViewModelBase
         // throw new InvalidOperationException("This constructor is for detecting binding in XAML and should never be called.");
     }
 
-    public MainPageViewModel(ILocalStorage localStorage, IPersonService personService)
+    public MainPageViewModel(IPersonService personService)
     {
-        _localStorage = localStorage ?? throw new ArgumentNullException(nameof(localStorage));
         _personService = personService ?? throw new ArgumentNullException(nameof(personService));
     }
 
