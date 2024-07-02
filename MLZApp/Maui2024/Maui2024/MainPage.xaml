@@ -45,10 +45,10 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Padding="10" BackgroundColor="#f0f0f0" Margin="0,5,0,5">
-                                <Label Text="{Binding Name}" FontSize="Medium" />
-                                <Label Text="{Binding Matriculation}" FontSize="Medium" />
+                                <Label Text="{Binding Name, StringFormat='Name: {0}'}" FontSize="Medium" />
+                                <Label Text="{Binding Matriculation, StringFormat='Matriculation: {0}'}" FontSize="Medium" />
                                 <Label Text="{Binding Price, StringFormat='Price: {0:C}'}" FontSize="Medium" />
-                                <Label Text="{Binding Description}" FontSize="Medium" />
+                                <Label Text="{Binding Description, StringFormat='Description: {0}'}" FontSize="Medium" />
                                 <Label Text="{Binding YearOfConstruction, StringFormat='Year: {0:d}'}" FontSize="Medium" />
                                 <Label Text="{Binding IsNewSailplane, StringFormat='Is New: {0}'}" FontSize="Medium" />
 
