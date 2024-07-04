@@ -13,15 +13,16 @@ public partial class MainPage
         BindingContext = _viewModel = viewModel;
 
         _viewModel.DisplayAlertRequested += ViewModel_DisplayAlertRequested;
-
     }
 
-    private void ViewModel_DisplayAlertRequested(object sender, DisplayAlertEventArgs e)
+    private void ViewModel_DisplayAlertRequested(object? sender, DisplayAlertEventArgs e)
     {
-        Device.BeginInvokeOnMainThread(async () =>
+        async void Action()
         {
             await DisplayAlert(e.Title, e.Message, e.Cancel);
-        });
+        }
+
+        MainThread.BeginInvokeOnMainThread(Action);
     }
 
     protected override void OnDisappearing()
