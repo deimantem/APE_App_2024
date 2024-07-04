@@ -60,6 +60,12 @@ namespace Core
                 return false;
             }
 
+            if (YearOfConstruction == null || YearOfConstruction > DateTime.Now)
+            {
+                OnDisplayAlertRequested("Error", "Year of construction must be a valid past date.", "OK");
+                return false;
+            }
+
             return true;
         }
 
@@ -135,13 +141,12 @@ namespace Core
             get => _description;
             set => SetField(ref _description, value);
         }
-        
-           public DateTime? YearOfConstruction
+
+        public DateTime? YearOfConstruction
         {
             get => _yearOfConstruction;
             set => SetField(ref _yearOfConstruction, value);
         }
-
 
         public bool IsNewSailplane
         {
