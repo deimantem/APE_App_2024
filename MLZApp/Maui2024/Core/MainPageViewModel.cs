@@ -60,6 +60,12 @@ namespace Core
                 return false;
             }
 
+            if (Description.Length < 10)
+            {
+                OnDisplayAlertRequested("Error", "Description must be at least 10 characters long.", "OK");
+                return false;
+            }
+
             if (YearOfConstruction == null || YearOfConstruction > DateTime.Now)
             {
                 OnDisplayAlertRequested("Error", "Year of construction must be a valid past date.", "OK");
