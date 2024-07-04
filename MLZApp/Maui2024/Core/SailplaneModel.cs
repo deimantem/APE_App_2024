@@ -1,23 +1,48 @@
 using SQLite;
 
-namespace Core;
-
-public class SailplaneModel
+namespace Core
 {
-    [PrimaryKey]
-    [AutoIncrement]
-    [NotNull]
-    public int? Id { get; set; }
+    /// <summary>
+    /// Represents a model for a sailplane.
+    /// </summary>
+    public class SailplaneModel
+    {
+        /// <summary>
+        /// Gets or sets the unique identifier for the sailplane.
+        /// </summary>
+        [PrimaryKey]
+        [AutoIncrement]
+        [NotNull]
+        public int? Id { get; set; }
 
-    public string? Name { get; set; }
+        /// <summary>
+        /// Gets or sets the name of the sailplane.
+        /// </summary>
+        public string? Name { get; set; }
 
-    public string? Matriculation { get; set; }
+        /// <summary>
+        /// Gets or sets the matriculation number of the sailplane.
+        /// </summary>
+        public string? Matriculation { get; set; }
 
-    public decimal Price { get; set; }
+        /// <summary>
+        /// Gets or sets the price of the sailplane.
+        /// </summary>
+        public decimal Price { get; set; }
 
-    public string? Description { get; set; }
+        /// <summary>
+        /// Gets or sets the description of the sailplane.
+        /// </summary>
+        public string? Description { get; set; }
 
-    public DateTime? YearOfConstruction { get; set; }
+        /// <summary>
+        /// Gets or sets the year of construction of the sailplane.
+        /// </summary>
+        public DateTime? YearOfConstruction { get; set; }
 
-    public bool? IsNewSailplane { get; set; }
+        /// <summary>
+        /// Gets or sets a value indicating whether the sailplane is new.
+        /// </summary>
+        public bool? IsNewSailplane { get; set; }
+    }
 }
