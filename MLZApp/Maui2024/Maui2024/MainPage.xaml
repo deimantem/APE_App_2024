@@ -16,22 +16,22 @@
     <ScrollView>
         <VerticalStackLayout Padding="10" Spacing="10">
             <Label Text="Name" FontSize="Medium" />
-            <Entry x:Name="NameEntry" Text="{Binding Name, Mode=TwoWay}" Placeholder="Enter name..." />
+            <Entry Text="{Binding Name, Mode=TwoWay}" Placeholder="Enter name..." />
 
             <Label Text="Matriculation" FontSize="Medium" />
-            <Entry x:Name="MatriculationEntry" Text="{Binding Matriculation, Mode=TwoWay}" Placeholder="Enter matriculation..." />
+            <Entry Text="{Binding Matriculation, Mode=TwoWay}" Placeholder="Enter matriculation..." />
 
             <Label Text="Price" FontSize="Medium" />
-            <Entry x:Name="PriceEntry" Text="{Binding Price, Mode=TwoWay}" Placeholder="Enter price..." Keyboard="Numeric" />
+            <Entry Text="{Binding Price, Mode=TwoWay}" Placeholder="Enter price..." Keyboard="Numeric" />
 
             <Label Text="Description" FontSize="Medium" />
-            <Editor x:Name="DescriptionEntry" Text="{Binding Description, Mode=TwoWay}" Placeholder="Enter description..." HeightRequest="80" />
+            <Editor Text="{Binding Description, Mode=TwoWay}" Placeholder="Enter description..." HeightRequest="80" />
 
             <Label Text="Year of Construction" FontSize="Medium" />
-            <DatePicker x:Name="YearOfConstructionPicker" Date="{Binding YearOfConstruction, Mode=TwoWay}" />
+            <DatePicker Date="{Binding YearOfConstruction, Mode=TwoWay}" />
 
             <Label Text="Is New Sailplane" FontSize="Medium" />
-            <Switch x:Name="IsNewSailplaneSwitch" IsToggled="{Binding IsNewSailplane, Mode=TwoWay}" />
+            <Switch IsToggled="{Binding IsNewSailplane, Mode=TwoWay}" />
 
             <Button Text="Save" Command="{Binding AddCommand}" HorizontalOptions="Center" Margin="0,10,0,0" />
 

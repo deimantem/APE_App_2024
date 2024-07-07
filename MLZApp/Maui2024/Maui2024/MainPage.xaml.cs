@@ -31,9 +31,21 @@ public partial class MainPage
         _viewModel.DisplayAlertRequested -= ViewModel_DisplayAlertRequested;
     }
 
-    private void EditButton_Clicked(object? sender, EventArgs e)
+    private void EditButton_Clicked(object sender, EventArgs e)
     {
-        throw new NotImplementedException();
+        if (sender is Button button && button.CommandParameter is SailplaneModel item)
+        {
+            if (BindingContext is MainPageViewModel viewModel)
+            {
+                viewModel.SelectedItem = item;
+                viewModel.Name = item.Name;
+                viewModel.Matriculation = item.Matriculation;
+                viewModel.Price = item.Price;
+                viewModel.Description = item.Description;
+                viewModel.YearOfConstruction = item.YearOfConstruction;
+                viewModel.IsNewSailplane = item.IsNewSailplane ?? false;
+            }
+        }
     }
 
     private void DeleteButton_Clicked(object? sender, EventArgs e)

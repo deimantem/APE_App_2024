@@ -93,7 +93,7 @@ public class MainPageViewModelTests : TestsBase
         public Task<bool> Save(T item)
         {
             var existingItem = _mockData.FirstOrDefault(i => i.Id == item.Id);
-            
+
             if (existingItem != null)
             {
                 existingItem.Name = item.Name;
