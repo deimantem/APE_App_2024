@@ -30,11 +30,51 @@ public partial class MainPageViewModel : ViewModelBase
         AddCommand = new AsyncRelayCommand(AddOrUpdate);
         ToggleIsNewSailplaneCommand = new RelayCommand<object>(ToggleIsNewSailplane);
         DeleteCommand = new RelayCommand<SailplaneModel>(Delete);
+        CreateDefaultDataCommand = new AsyncRelayCommand(CreateDefaultData);
     }
 
     public IAsyncRelayCommand AddCommand { get; }
     public RelayCommand<object> ToggleIsNewSailplaneCommand { get; }
     public RelayCommand<SailplaneModel> DeleteCommand { get; }
+
+    public IAsyncRelayCommand CreateDefaultDataCommand { get; }
+
+    private async Task CreateDefaultData()
+    {
+        // Generate mock data for testing
+        var mockData = new ObservableCollection<SailplaneModel>
+        {
+            new()
+            {
+                Name = "Mock Sailplane 1",
+                Matriculation = "MAT123",
+                Price = 50000,
+                Description = "This is a mock sailplane for testing purposes.",
+                YearOfConstruction = new DateTime(2023, 1, 1),
+                IsNewSailplane = true
+            },
+            new()
+            {
+                Name = "Mock Sailplane 2",
+                Matriculation = "MAT456",
+                Price = 75000,
+                Description = "Another mock sailplane to simulate data.",
+                YearOfConstruction = new DateTime(2022, 6, 15),
+                IsNewSailplane = false
+            }
+        };
+
+        Items.Clear();
+
+        foreach (var item in mockData)
+        {
+            await _localStorage.Save(item);
+
+            Items.Add(item);
+        }
+
+        OnDisplayAlertRequested("Success", "Default data created successfully.", "OK");
+    }
 
     private bool ValidateFields()
     {
