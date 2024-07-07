@@ -33,7 +33,7 @@
                     <DatePicker Date="{Binding YearOfConstruction, Mode=TwoWay}" />
 
                     <Label Text="Is New Sailplane" FontSize="Medium" />
-                    <Switch IsToggled="{Binding IsNewSailplane, Mode=TwoWay}" />
+                    <CheckBox IsChecked="{Binding IsNewSailplane, Mode=TwoWay}" />
 
                     <Button Text="Save" Command="{Binding AddCommand}" HorizontalOptions="FillAndExpand" BackgroundColor="#007bff" TextColor="White" Margin="0,10,0,0" />
                 </StackLayout>
