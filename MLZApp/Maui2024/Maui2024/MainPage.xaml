@@ -15,41 +15,57 @@
 
     <ScrollView>
         <VerticalStackLayout Padding="10" Spacing="10">
-            <Label Text="Name" FontSize="Medium" />
-            <Entry Text="{Binding Name, Mode=TwoWay}" Placeholder="Enter name..." />
+            <Frame Padding="10">
+                <StackLayout Spacing="10">
+                    <Label Text="Name" FontSize="Medium" />
+                    <Entry Text="{Binding Name, Mode=TwoWay}" Placeholder="Enter name..." />
 
-            <Label Text="Matriculation" FontSize="Medium" />
-            <Entry Text="{Binding Matriculation, Mode=TwoWay}" Placeholder="Enter matriculation..." />
+                    <Label Text="Matriculation" FontSize="Medium" />
+                    <Entry Text="{Binding Matriculation, Mode=TwoWay}" Placeholder="Enter matriculation..." />
 
-            <Label Text="Price" FontSize="Medium" />
-            <Entry Text="{Binding Price, Mode=TwoWay}" Placeholder="Enter price..." Keyboard="Numeric" />
+                    <Label Text="Price" FontSize="Medium" />
+                    <Entry Text="{Binding Price, Mode=TwoWay}" Placeholder="Enter price..." Keyboard="Numeric" />
 
-            <Label Text="Description" FontSize="Medium" />
-            <Editor Text="{Binding Description, Mode=TwoWay}" Placeholder="Enter description..." HeightRequest="80" />
+                    <Label Text="Description" FontSize="Medium" />
+                    <Editor Text="{Binding Description, Mode=TwoWay}" Placeholder="Enter description..." HeightRequest="80" />
 
-            <Label Text="Year of Construction" FontSize="Medium" />
-            <DatePicker Date="{Binding YearOfConstruction, Mode=TwoWay}" />
+                    <Label Text="Year of Construction" FontSize="Medium" />
+                    <DatePicker Date="{Binding YearOfConstruction, Mode=TwoWay}" />
 
-            <Label Text="Is New Sailplane" FontSize="Medium" />
-            <Switch IsToggled="{Binding IsNewSailplane, Mode=TwoWay}" />
+                    <Label Text="Is New Sailplane" FontSize="Medium" />
+                    <Switch IsToggled="{Binding IsNewSailplane, Mode=TwoWay}" />
 
-            <Button Text="Save" Command="{Binding AddCommand}" HorizontalOptions="Center" Margin="0,10,0,0" />
+                    <Button Text="Save" Command="{Binding AddCommand}" HorizontalOptions="FillAndExpand" BackgroundColor="#007bff" TextColor="White" Margin="0,10,0,0" />
+                </StackLayout>
+            </Frame>
+
+            <Label Text="Existing Sailplanes" FontSize="Medium" FontAttributes="Bold" Margin="0,20,0,10" />
 
             <CollectionView ItemsSource="{Binding Items}" SelectionMode="Single" Margin="0,10,0,0">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="5" />
+                </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout Padding="10" BackgroundColor="#f0f0f0" Margin="0,5,0,5">
-                            <Label Text="{Binding Name, StringFormat='Name: {0}'}" FontSize="Medium" />
-                            <Label Text="{Binding Matriculation, StringFormat='Matriculation: {0}'}" FontSize="Medium" />
-                            <Label Text="{Binding Price, StringFormat='Price: {0:C}'}" FontSize="Medium" />
-                            <Label Text="{Binding Description, StringFormat='Description: {0}'}" FontSize="Medium" />
-                            <Label Text="{Binding YearOfConstruction, StringFormat='Year: {0:d}'}" FontSize="Medium" />
-                            <Label Text="{Binding IsNewSailplane, StringFormat='Is New: {0}'}" FontSize="Medium" />
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" Margin="0,10,0,0">
-                                <Button Text="Edit" Clicked="EditButton_Clicked" CommandParameter="{Binding .}" />
-                                <Button Text="Delete" Clicked="DeleteButton_Clicked" CommandParameter="{Binding .}" />
+                        <Frame Padding="10" BackgroundColor="#f0f0f0" HasShadow="False" CornerRadius="5" Margin="0,5,0,5">
+                            <StackLayout>
+                                <Label Text="{Binding Name}" FontSize="Medium" FontAttributes="Bold" Margin="0,0,0,5" />
+                                <BoxView HeightRequest="1" BackgroundColor="Gray" HorizontalOptions="FillAndExpand" Margin="0,0,0,5" />
+                                <StackLayout Spacing="10">
+                                    <Label Text="{Binding Matriculation, StringFormat='Matriculation: {0}'}" FontSize="Medium" />
+                                    <Label Text="{Binding Price, StringFormat='Price: {0:C}'}" FontSize="Medium" />
+                                    <Label Text="{Binding Description, StringFormat='Description: {0}'}" FontSize="Medium" />
+                                    <Label Text="{Binding YearOfConstruction, StringFormat='Year: {0:d}'}" FontSize="Medium" />
+                                    <Label Text="{Binding IsNewSailplane, StringFormat='Is New: {0}'}" FontSize="Medium" />
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" Margin="0,10,0,0">
+                                        <!-- Edit button -->
+                                        <Button Text="Edit" Clicked="EditButton_Clicked" CommandParameter="{Binding .}" BackgroundColor="#007bff" TextColor="White" Margin="0,0,10,0" />
+                                        <!-- Delete button -->
+                                        <Button Text="Delete" Clicked="DeleteButton_Clicked" CommandParameter="{Binding .}" BackgroundColor="#dc3545" TextColor="White" />
+                                    </StackLayout>
+                                </StackLayout>
                             </StackLayout>
-                        </StackLayout>
+                        </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
