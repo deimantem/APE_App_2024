@@ -10,14 +10,11 @@
     </ContentPage.BindingContext>
 
     <ContentPage.Behaviors>
-        <toolkit:EventToCommandBehavior
-            EventName="Appearing"
-            Command="{Binding EnsureModelLoadedCommand}" />
+        <toolkit:EventToCommandBehavior EventName="Appearing" Command="{Binding EnsureModelLoadedCommand}" />
     </ContentPage.Behaviors>
 
     <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="15">
-            <!-- Input fields for Sailplane data -->
+        <VerticalStackLayout Padding="10" Spacing="10">
             <Label Text="Name" FontSize="Medium" />
             <Entry x:Name="NameEntry" Text="{Binding Name, Mode=TwoWay}" Placeholder="Enter name..." />
 
@@ -28,7 +25,7 @@
             <Entry x:Name="PriceEntry" Text="{Binding Price, Mode=TwoWay}" Placeholder="Enter price..." Keyboard="Numeric" />
 
             <Label Text="Description" FontSize="Medium" />
-            <Editor x:Name="DescriptionEntry" Text="{Binding Description, Mode=TwoWay}" Placeholder="Enter description..." HeightRequest="100" />
+            <Editor x:Name="DescriptionEntry" Text="{Binding Description, Mode=TwoWay}" Placeholder="Enter description..." HeightRequest="80" />
 
             <Label Text="Year of Construction" FontSize="Medium" />
             <DatePicker x:Name="YearOfConstructionPicker" Date="{Binding YearOfConstruction, Mode=TwoWay}" />
@@ -36,33 +33,26 @@
             <Label Text="Is New Sailplane" FontSize="Medium" />
             <Switch x:Name="IsNewSailplaneSwitch" IsToggled="{Binding IsNewSailplane, Mode=TwoWay}" />
 
-            <!-- Save Button -->
-            <Button Text="Save" Command="{Binding AddCommand}" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Margin="0,20,0,0" />
+            <Button Text="Save" Command="{Binding AddCommand}" HorizontalOptions="Center" Margin="0,10,0,0" />
 
-            <!-- ListView to display Sailplanes -->
-            <ListView ItemsSource="{Binding Items}" SelectionMode="Single">
-                <ListView.ItemTemplate>
+            <CollectionView ItemsSource="{Binding Items}" SelectionMode="Single" Margin="0,10,0,0">
+                <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Padding="10" BackgroundColor="#f0f0f0" Margin="0,5,0,5">
-                                <Label Text="{Binding Name, StringFormat='Name: {0}'}" FontSize="Medium" />
-                                <Label Text="{Binding Matriculation, StringFormat='Matriculation: {0}'}" FontSize="Medium" />
-                                <Label Text="{Binding Price, StringFormat='Price: {0:C}'}" FontSize="Medium" />
-                                <Label Text="{Binding Description, StringFormat='Description: {0}'}" FontSize="Medium" />
-                                <Label Text="{Binding YearOfConstruction, StringFormat='Year: {0:d}'}" FontSize="Medium" />
-                                <Label Text="{Binding IsNewSailplane, StringFormat='Is New: {0}'}" FontSize="Medium" />
-
-                                <!-- Edit and Delete Buttons -->
-                                <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" Margin="0,10,0,0">
-                                    <Button Text="Edit" Clicked="EditButton_Clicked" CommandParameter="{Binding .}" />
-                                    <Button Text="Delete" Clicked="DeleteButton_Clicked" CommandParameter="{Binding .}" />
-                                </StackLayout>
+                        <StackLayout Padding="10" BackgroundColor="#f0f0f0" Margin="0,5,0,5">
+                            <Label Text="{Binding Name, StringFormat='Name: {0}'}" FontSize="Medium" />
+                            <Label Text="{Binding Matriculation, StringFormat='Matriculation: {0}'}" FontSize="Medium" />
+                            <Label Text="{Binding Price, StringFormat='Price: {0:C}'}" FontSize="Medium" />
+                            <Label Text="{Binding Description, StringFormat='Description: {0}'}" FontSize="Medium" />
+                            <Label Text="{Binding YearOfConstruction, StringFormat='Year: {0:d}'}" FontSize="Medium" />
+                            <Label Text="{Binding IsNewSailplane, StringFormat='Is New: {0}'}" FontSize="Medium" />
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" Margin="0,10,0,0">
+                                <Button Text="Edit" Clicked="EditButton_Clicked" CommandParameter="{Binding .}" />
+                                <Button Text="Delete" Clicked="DeleteButton_Clicked" CommandParameter="{Binding .}" />
                             </StackLayout>
-                        </ViewCell>
+                        </StackLayout>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>
