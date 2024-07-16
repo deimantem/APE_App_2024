@@ -4,7 +4,7 @@ namespace Core.Services
     /// Interface for local storage operations.
     /// </summary>
     /// <typeparam name="T">The type of the object to be stored.</typeparam>
-    public interface ILocalStorage<T>
+    public interface ILocalStorage<T> where T : class, new()
     {
         /// <summary>
         /// Tries to load an object from storage by its identifier.

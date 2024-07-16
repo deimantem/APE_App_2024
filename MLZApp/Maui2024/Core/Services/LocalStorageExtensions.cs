@@ -10,7 +10,7 @@ namespace Core.Services
         /// <param name="id">The identifier of the object to load.</param>
         /// <returns>The loaded object of type <typeparamref name="T"/>.</returns>
         /// <exception cref="InvalidOperationException">Thrown if the object with the specified id is not found.</exception>
-        public static async Task<T> Load<T>(this ILocalStorage<T> localStorage, int id) where T : class
+        public static async Task<T> Load<T>(this ILocalStorage<T> localStorage, int id) where T : class, new()
         {
             var item = await localStorage.TryLoad(id);
             if (item != null)
